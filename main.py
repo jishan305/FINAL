@@ -23,7 +23,8 @@ oot_channel_id_list = [
 "725726144384467075", #anurag
 "729053673723920424", #challenge
 "729236496183328768", #trivia bot 
-"725596647115063356"  #pride
+"725596647115063356",  #pride
+"744516111877275729" 
 ]
 
 answer_pattern = re.compile(r'(not|n)?([1-3]{1})(\?)?(cnf)?(\?)?$', re.IGNORECASE)
@@ -229,7 +230,7 @@ class Bot(discord.Client):
         print("Connected to discord.")
         print("User: " + self.user.name)
         print("ID: " + str(self.user.id))
-        log=self.get_channel(731859318453960776)
+        log=self.get_channel(748959504934371418)
         await log.send("> **HQ Trivia Bot Is Updated** ✅")
 
         await self.clear_results()
@@ -283,7 +284,7 @@ def bot_with_cyclic_update_process(update_event, answer_scores):
     upd_thread.start()
 
     loop = asyncio.get_event_loop()
-    loop.create_task(bot.start(''))
+    loop.create_task(bot.start('NzUzNjMxNjE1NTQwMDAyOTA2.X1pAIg.pTeIXqSTgKEBKsBbAUC_L4o_LGw'))
     loop.run_forever()
 
 
@@ -292,7 +293,7 @@ def selfbot_process(update_event, answer_scores):
     selfbot = SelfBot(update_event, answer_scores)
 
     loop = asyncio.get_event_loop()
-    loop.create_task(selfbot.start('',
+    loop.create_task(selfbot.start('NzM2ODg0OTMyMzIzOTY3MDU3.Xx1gDQ.20uoH4iWm370XS-9gLl3eyXYyPo',
                                    bot=False))
     loop.run_forever()
 
